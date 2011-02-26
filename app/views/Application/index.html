@@ -1,0 +1,47 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<table>
+	<tr>
+		<th>Environment</th>
+		<th>Service-type</th>
+		<th>Service-name</th>
+		<th>Version</th>
+		<th>Available locations</th>
+	</tr>
+#{list items:services, as:'s'}
+	<tr>
+		<td>
+			${s.env}
+		</td>
+		<td>
+			${s.type}
+		</td>
+		<td>
+			${s.name}
+		</td>
+		<td>
+			${s.version}
+		</td>
+		<td>
+			<table>
+				<tr>
+					<th>location</th>
+					<th>quality</th>
+					<th>last updated</th>
+					<th>server ip</th>
+						
+				</tr>	
+			#{list items: s.locations, as:'l'}
+				<tr>
+					<td>${l.url}</td>
+					<td>${l.quality}</td>
+					<td>${l.lastUpdated}</td>
+					<td>${l.ip}</td>
+				</tr>
+			#{/list}
+			</table>
+		</td>
+	</tr>
+#{/list}
+</table>
