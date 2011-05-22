@@ -1,7 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<table>
+
+
+Showing all online services in DDSL network:
+<table class="onlineServices">
 	<tr>
 		<th>Environment</th>
 		<th>Service-type</th>
@@ -18,15 +21,17 @@
 			${s.type}
 		</td>
 		<td>
+			<b>
 			${s.name}
+			</b>
 		</td>
 		<td>
 			${s.version}
 		</td>
 		<td>
-			<table>
+			<table border="1">
 				<tr>
-					<th>location</th>
+					<th>location-url</th>
 					<th>quality</th>
 					<th>last updated</th>
 					<th>server ip</th>
